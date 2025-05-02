@@ -1,0 +1,1294 @@
+
+<html class="">
+              
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest', // Options: 'nest', 'remove', 'replace'
+      };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+<style>
+  * {
+    font-family: "Inter", sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+    
+<style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+</style>
+
+    
+<style>
+   :root {
+          /* Base colors */
+          --color-base: #ffffff;
+          --color-base-50: #f9fafb;
+          --color-base-100: #f3f4f6;
+          --color-base-200: #e5e7eb;
+          --color-base-300: #d1d5db;
+          --color-base-400: #9ca3af;
+          --color-base-500: #6b7280;
+          --color-base-600: #4b5563;  
+          --color-base-700: #374151;
+          --color-base-800: #1f2937;  
+          --color-base-900: #111827;
+          --color-base-content: #1f2937;
+
+          /* Primary colors */
+          --color-primary: #3b82f6;
+          --color-primary-50: #eff6ff;
+          --color-primary-100: #dbeafe;
+          --color-primary-200: #bfdbfe;
+          --color-primary-300: #93c5fd;
+          --color-primary-400: #60a5fa;
+          --color-primary-500: #3b82f6;
+          --color-primary-600: #2563eb;
+          --color-primary-700: #1d4ed8;
+          --color-primary-800: #1e40af;
+          --color-primary-900: #1e3a8a;
+          --color-primary-focus: #2563eb;
+          --color-primary-content: #ffffff;
+
+          /* Secondary colors */
+          --color-secondary: #8b5cf6;
+          --color-secondary-50: #f5f3ff;
+          --color-secondary-100: #ede9fe;
+          --color-secondary-200: #ddd6fe;
+          --color-secondary-300: #c4b5fd;
+          --color-secondary-400: #a78bfa;
+          --color-secondary-500: #8b5cf6;
+          --color-secondary-600: #7c3aed;
+          --color-secondary-700: #6d28d9;
+          --color-secondary-800: #5b21b6;
+          --color-secondary-900: #4c1d95;
+          --color-secondary-focus: #7c3aed;
+          --color-secondary-content: #ffffff;
+
+          /* Accent colors */
+          --color-accent: #f472b6;
+          --color-accent-50: #fdf2f8;
+          --color-accent-100: #fce7f3;
+          --color-accent-200: #fbcfe8;
+          --color-accent-300: #f9a8d4;
+          --color-accent-400: #f472b6;
+          --color-accent-500: #ec4899;
+          --color-accent-600: #db2777;
+          --color-accent-700: #be185d;
+          --color-accent-800: #9d174d;
+          --color-accent-900: #831843;
+          --color-accent-focus: #db2777;
+          --color-accent-content: #ffffff;
+
+          /* Neutral colors */
+          --color-neutral: #6b7280;
+          --color-neutral-50: #f9fafb;
+          --color-neutral-100: #f3f4f6;
+          --color-neutral-200: #e5e7eb;
+          --color-neutral-300: #d1d5db;
+          --color-neutral-400: #9ca3af;
+          --color-neutral-500: #6b7280;
+          --color-neutral-600: #4b5563;
+          --color-neutral-700: #374151;
+          --color-neutral-800: #1f2937;
+          --color-neutral-900: #111827;
+          --color-neutral-focus: #4b5563;
+          --color-neutral-content: #ffffff;
+
+          /* Info colors */
+          --color-info: #3b82f6;
+          --color-info-50: #eff6ff;
+          --color-info-100: #dbeafe;
+          --color-info-200: #bfdbfe;
+          --color-info-300: #93c5fd;
+          --color-info-400: #60a5fa;
+          --color-info-500: #3b82f6;
+          --color-info-600: #2563eb;
+          --color-info-700: #1d4ed8;
+          --color-info-800: #1e40af;
+          --color-info-900: #1e3a8a;
+          --color-info-focus: #2563eb;
+          --color-info-content: #ffffff;
+
+          /* Success colors */
+          --color-success: #10b981;
+          --color-success-50: #ecfdf5;
+          --color-success-100: #d1fae5;
+          --color-success-200: #a7f3d0;
+          --color-success-300: #6ee7b7;
+          --color-success-400: #34d399;
+          --color-success-500: #10b981;
+          --color-success-600: #059669;
+          --color-success-700: #047857;
+          --color-success-800: #065f46;
+          --color-success-900: #064e3b;
+          --color-success-focus: #059669;
+          --color-success-content: #ffffff;
+
+          /* Warning colors */
+          --color-warning: #f59e0b;
+          --color-warning-50: #fffbeb;
+          --color-warning-100: #fef3c7;
+          --color-warning-200: #fde68a;
+          --color-warning-300: #fcd34d;
+          --color-warning-400: #fbbf24;
+          --color-warning-500: #f59e0b;
+          --color-warning-600: #d97706;
+          --color-warning-700: #b45309;
+          --color-warning-800: #92400e;
+          --color-warning-900: #78350f;
+          --color-warning-focus: #d97706;
+          --color-warning-content: #ffffff;
+
+          /* Error colors */
+          --color-error: #ef4444;
+          --color-error-50: #fef2f2;
+          --color-error-100: #fee2e2;
+          --color-error-200: #fecaca;
+          --color-error-300: #fca5a5;
+          --color-error-400: #f87171;
+          --color-error-500: #ef4444;
+          --color-error-600: #dc2626;
+          --color-error-700: #b91c1c;
+          --color-error-800: #991b1b;
+          --color-error-900: #7f1d1d;
+          --color-error-focus: #dc2626;
+          --color-error-content: #ffffff;
+        }
+</style>
+
+    
+<style>
+/* Dark theme */
+        .dark {
+          /* Base colors */
+          --color-base: #1f2937;
+          --color-base-50: #111827;
+          --color-base-100: #1f2937;
+          --color-base-200: #374151;
+          --color-base-300: #4b5563;
+          --color-base-400: #6b7280;
+          --color-base-500: #9ca3af;
+          --color-base-600: #d1d5db;
+          --color-base-700: #e5e7eb;
+          --color-base-800: #f3f4f6;
+          --color-base-900: #f9fafb;
+          --color-base-content: #f9fafb;
+
+          /* Primary colors */
+          --color-primary: #60a5fa;
+          --color-primary-50: #1e3a8a;
+          --color-primary-100: #1e40af;
+          --color-primary-200: #1d4ed8;
+          --color-primary-300: #2563eb;
+          --color-primary-400: #3b82f6;
+          --color-primary-500: #60a5fa;
+          --color-primary-600: #93c5fd;
+          --color-primary-700: #bfdbfe;
+          --color-primary-800: #dbeafe;
+          --color-primary-900: #eff6ff;
+          --color-primary-focus: #3b82f6;
+          --color-primary-content: #1f2937;
+
+          /* Secondary colors */
+          --color-secondary: #a78bfa;
+          --color-secondary-50: #4c1d95;
+          --color-secondary-100: #5b21b6;
+          --color-secondary-200: #6d28d9;
+          --color-secondary-300: #7c3aed;
+          --color-secondary-400: #8b5cf6;
+          --color-secondary-500: #a78bfa;
+          --color-secondary-600: #c4b5fd;
+          --color-secondary-700: #ddd6fe;
+          --color-secondary-800: #ede9fe;
+          --color-secondary-900: #f5f3ff;
+          --color-secondary-focus: #8b5cf6;
+          --color-secondary-content: #1f2937;
+
+          /* Accent colors */
+          --color-accent: #f472b6;
+          --color-accent-50: #831843;
+          --color-accent-100: #9d174d;
+          --color-accent-200: #be185d;
+          --color-accent-300: #db2777;
+          --color-accent-400: #ec4899;
+          --color-accent-500: #f472b6;
+          --color-accent-600: #f9a8d4;
+          --color-accent-700: #fbcfe8;
+          --color-accent-800: #fce7f3;
+          --color-accent-900: #fdf2f8;
+          --color-accent-focus: #ec4899;
+          --color-accent-content: #1f2937;
+
+          /* Neutral colors remain the same as light theme */
+
+          /* Info colors */
+          --color-info: #60a5fa;
+          --color-info-50: #1e3a8a;
+          --color-info-100: #1e40af;
+          --color-info-200: #1d4ed8;
+          --color-info-300: #2563eb;
+          --color-info-400: #3b82f6;
+          --color-info-500: #60a5fa;
+          --color-info-600: #93c5fd;
+          --color-info-700: #bfdbfe;
+          --color-info-800: #dbeafe;
+          --color-info-900: #eff6ff;
+          --color-info-focus: #3b82f6;
+          --color-info-content: #1f2937;
+
+          /* Success colors */
+          --color-success: #34d399;
+          --color-success-50: #064e3b;
+          --color-success-100: #065f46;
+          --color-success-200: #047857;
+          --color-success-300: #059669;
+          --color-success-400: #10b981;
+          --color-success-500: #34d399;
+          --color-success-600: #6ee7b7;
+          --color-success-700: #a7f3d0;
+          --color-success-800: #d1fae5;
+          --color-success-900: #ecfdf5;
+          --color-success-focus: #10b981;
+          --color-success-content: #1f2937;
+
+          /* Warning colors */
+          --color-warning: #fbbf24;
+          --color-warning-50: #78350f;
+          --color-warning-100: #92400e;
+          --color-warning-200: #b45309;
+          --color-warning-300: #d97706;
+          --color-warning-400: #f59e0b;
+          --color-warning-500: #fbbf24;
+          --color-warning-600: #fcd34d;
+          --color-warning-700: #fde68a;
+          --color-warning-800: #fef3c7;
+          --color-warning-900: #fffbeb;
+          --color-warning-focus: #f59e0b;
+          --color-warning-content: #1f2937;
+
+          /* Error colors */
+          --color-error: #f87171;
+          --color-error-50: #7f1d1d;
+          --color-error-100: #991b1b;
+          --color-error-200: #b91c1c;
+          --color-error-300: #dc2626;
+          --color-error-400: #ef4444;
+          --color-error-500: #f87171;
+          --color-error-600: #fca5a5;
+          --color-error-700: #fecaca;
+          --color-error-800: #fee2e2;
+          --color-error-900: #fef2f2;
+          --color-error-focus: #ef4444;
+          --color-error-content: #1f2937;
+        }
+</style>
+
+    
+  <script>
+        tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                ...{"transparent":"transparent","current":"currentColor","black":"#000000","white":"#ffffff","gray":{"50":"#f9fafb","100":"#f3f4f6","200":"#e5e7eb","300":"#d1d5db","400":"#9ca3af","500":"#6b7280","600":"#4b5563","700":"#374151","800":"#1f2937","900":"#111827"},"red":{"50":"#fef2f2","100":"#fee2e2","200":"#fecaca","300":"#fca5a5","400":"#f87171","500":"#ef4444","600":"#dc2626","700":"#b91c1c","800":"#991b1b","900":"#7f1d1d"},"yellow":{"50":"#fffbeb","100":"#fef3c7","200":"#fde68a","300":"#fcd34d","400":"#fbbf24","500":"#f59e0b","600":"#d97706","700":"#b45309","800":"#92400e","900":"#78350f"},"green":{"50":"#ecfdf5","100":"#d1fae5","200":"#a7f3d0","300":"#6ee7b7","400":"#34d399","500":"#10b981","600":"#059669","700":"#047857","800":"#065f46","900":"#064e3b"},"blue":{"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a"},"indigo":{"50":"#eef2ff","100":"#e0e7ff","200":"#c7d2fe","300":"#a5b4fc","400":"#818cf8","500":"#6366f1","600":"#4f46e5","700":"#4338ca","800":"#3730a3","900":"#312e81"},"purple":{"50":"#f5f3ff","100":"#ede9fe","200":"#ddd6fe","300":"#c4b5fd","400":"#a78bfa","500":"#8b5cf6","600":"#7c3aed","700":"#6d28d9","800":"#5b21b6","900":"#4c1d95"},"pink":{"50":"#fdf2f8","100":"#fce7f3","200":"#fbcfe8","300":"#f9a8d4","400":"#f472b6","500":"#ec4899","600":"#db2777","700":"#be185d","800":"#9d174d","900":"#831843"}},
+                ...{"primary":{"50":"var(--color-primary-50)","100":"var(--color-primary-100)","200":"var(--color-primary-200)","300":"var(--color-primary-300)","400":"var(--color-primary-400)","500":"var(--color-primary-500)","600":"var(--color-primary-600)","700":"var(--color-primary-700)","800":"var(--color-primary-800)","900":"var(--color-primary-900)","DEFAULT":"var(--color-primary)","focus":"var(--color-primary-focus)","content":"var(--color-primary-content)"},"secondary":{"50":"var(--color-secondary-50)","100":"var(--color-secondary-100)","200":"var(--color-secondary-200)","300":"var(--color-secondary-300)","400":"var(--color-secondary-400)","500":"var(--color-secondary-500)","600":"var(--color-secondary-600)","700":"var(--color-secondary-700)","800":"var(--color-secondary-800)","900":"var(--color-secondary-900)","DEFAULT":"var(--color-secondary)","focus":"var(--color-secondary-focus)","content":"var(--color-secondary-content)"},"accent":{"50":"var(--color-accent-50)","100":"var(--color-accent-100)","200":"var(--color-accent-200)","300":"var(--color-accent-300)","400":"var(--color-accent-400)","500":"var(--color-accent-500)","600":"var(--color-accent-600)","700":"var(--color-accent-700)","800":"var(--color-accent-800)","900":"var(--color-accent-900)","DEFAULT":"var(--color-accent)","focus":"var(--color-accent-focus)","content":"var(--color-accent-content)"},"neutral":{"50":"var(--color-neutral-50)","100":"var(--color-neutral-100)","200":"var(--color-neutral-200)","300":"var(--color-neutral-300)","400":"var(--color-neutral-400)","500":"var(--color-neutral-500)","600":"var(--color-neutral-600)","700":"var(--color-neutral-700)","800":"var(--color-neutral-800)","900":"var(--color-neutral-900)","DEFAULT":"var(--color-neutral)","focus":"var(--color-neutral-focus)","content":"var(--color-neutral-content)"},"info":{"50":"var(--color-info-50)","100":"var(--color-info-100)","200":"var(--color-info-200)","300":"var(--color-info-300)","400":"var(--color-info-400)","500":"var(--color-info-500)","600":"var(--color-info-600)","700":"var(--color-info-700)","800":"var(--color-info-800)","900":"var(--color-info-900)","DEFAULT":"var(--color-info)","focus":"var(--color-info-focus)","content":"var(--color-info-content)"},"success":{"50":"var(--color-success-50)","100":"var(--color-success-100)","200":"var(--color-success-200)","300":"var(--color-success-300)","400":"var(--color-success-400)","500":"var(--color-success-500)","600":"var(--color-success-600)","700":"var(--color-success-700)","800":"var(--color-success-800)","900":"var(--color-success-900)","DEFAULT":"var(--color-success)","focus":"var(--color-success-focus)","content":"var(--color-success-content)"},"warning":{"50":"var(--color-warning-50)","100":"var(--color-warning-100)","200":"var(--color-warning-200)","300":"var(--color-warning-300)","400":"var(--color-warning-400)","500":"var(--color-warning-500)","600":"var(--color-warning-600)","700":"var(--color-warning-700)","800":"var(--color-warning-800)","900":"var(--color-warning-900)","DEFAULT":"var(--color-warning)","focus":"var(--color-warning-focus)","content":"var(--color-warning-content)"},"error":{"50":"var(--color-error-50)","100":"var(--color-error-100)","200":"var(--color-error-200)","300":"var(--color-error-300)","400":"var(--color-error-400)","500":"var(--color-error-500)","600":"var(--color-error-600)","700":"var(--color-error-700)","800":"var(--color-error-800)","900":"var(--color-error-900)","DEFAULT":"var(--color-error)","focus":"var(--color-error-focus)","content":"var(--color-error-content)"},"danger":{"50":"var(--color-error-50)","100":"var(--color-error-100)","200":"var(--color-error-200)","300":"var(--color-error-300)","400":"var(--color-error-400)","500":"var(--color-error-500)","600":"var(--color-error-600)","700":"var(--color-error-700)","800":"var(--color-error-800)","900":"var(--color-error-900)","DEFAULT":"var(--color-error)","focus":"var(--color-error-focus)","content":"var(--color-error-content)"},"failure":{"50":"var(--color-error-50)","100":"var(--color-error-100)","200":"var(--color-error-200)","300":"var(--color-error-300)","400":"var(--color-error-400)","500":"var(--color-error-500)","600":"var(--color-error-600)","700":"var(--color-error-700)","800":"var(--color-error-800)","900":"var(--color-error-900)","DEFAULT":"var(--color-error)","focus":"var(--color-error-focus)","content":"var(--color-error-content)"}},
+                },
+              },
+            },
+            variants: {
+              extend: {
+                backgroundColor: ['active', 'group-hover'],
+                textColor: ['active', 'group-hover'],
+              },
+            },
+            plugins: [],
+          };
+  </script>
+
+</head>
+
+              <body class="h-full text-base-content">
+                <div id="main-container" class="min-h-screen bg-gray-50">
+  <!-- Header Section -->
+  <header id="header" class="bg-white py-4 px-8 flex justify-between items-center shadow-sm sticky top-0 z-50">
+    <div class="flex items-center">
+      <span class="font-bold text-2xl text-indigo-900 cursor-pointer">
+        One<span class="bg-indigo-600 text-white text-xs px-1 py-0.5 rounded">pane</span>
+        <span class="text-indigo-600 font-bold">AI</span>
+      </span>
+    </div>
+    <!-- <div class="hidden md:flex space-x-8">
+      <span class="text-indigo-900 font-medium cursor-pointer">Features</span>
+      <span class="text-indigo-900 font-medium cursor-pointer">Use Cases</span>
+      <span class="text-indigo-900 font-medium cursor-pointer">Integrations</span>
+      <span class="text-indigo-900 font-medium cursor-pointer">Pricing</span>
+    </div> -->
+    <div class="flex items-center space-x-4">
+      <span class="text-indigo-900 font-medium cursor-pointer">Login</span>
+      <span class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold py-2 px-6 rounded-full cursor-pointer">Get Started</span>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="py-16 px-4 text-center bg-gradient-to-b from-gray-50 to-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-indigo-100 inline-block px-4 py-2 rounded-lg mb-6">
+        <p class="text-lg font-medium text-indigo-700">
+          Enterprise GenAI for IT Teams <i class="fa-solid fa-robot ml-1"></i>
+        </p>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold text-indigo-900 mb-2">
+        Simplify Enterprise IT
+      </h1>
+      <h2 class="text-4xl md:text-5xl font-bold text-indigo-700 mb-8">
+        with Intelligent Assistance
+      </h2>
+      <p class="text-xl md:text-2xl text-gray-700 mb-8">
+        Connect your internal docs, cloud systems, and monitoring tools<br/>
+        to provide instant answers for your entire IT team.
+      </p>
+      <span class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg py-4 px-8 rounded-full inline-block shadow-lg cursor-pointer">
+        Request Demo
+      </span>
+      <p class="text-gray-600 mt-4">No credit card required • Setup in minutes</p>
+    </div>
+  </section>
+
+  <!-- Interactive Demo Section -->
+  <section id="demo" class="relative px-4 py-12 max-w-6xl mx-auto">
+    <div class="bg-gradient-to-r from-indigo-300 via-purple-300 to-blue-300 rounded-3xl p-1 shadow-xl">
+      <div class="bg-white rounded-3xl p-6">
+        <h3 class="text-center text-2xl font-bold text-indigo-900 mb-6">See Onepane AI in Action</h3>
+        
+        <div class="flex flex-col mb-4 border border-gray-200 rounded-xl overflow-hidden">
+          <!-- Chat Interface Header -->
+          <div class="bg-indigo-600 text-white p-3 flex justify-between items-center">
+            <div class="flex items-center">
+              <i class="fa-solid fa-comment-dots mr-2"></i>
+              <span class="font-medium">Onepane AI Assistant</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="text-white hover:text-indigo-200">
+                <i class="fa-solid fa-gear"></i>
+              </button>
+              <button class="text-white hover:text-indigo-200">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Chat Messages -->
+          <div class="bg-gray-50 p-4 h-96 overflow-y-auto flex flex-col space-y-4">
+            <!-- User Question -->
+            <div class="flex justify-end">
+              <div class="bg-indigo-100 text-indigo-900 p-3 rounded-lg max-w-md">
+                <p class="font-medium">Who made changes to our Azure VMs last week?</p>
+              </div>
+            </div>
+            
+            <!-- AI Response -->
+            <div class="flex justify-start">
+              <div class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm max-w-2xl">
+                <div class="flex items-center mb-2">
+                  <div class="bg-indigo-600 rounded-full w-8 h-8 flex items-center justify-center mr-2">
+                    <i class="fa-solid fa-robot text-white"></i>
+                  </div>
+                  <span class="font-bold text-indigo-900">Onepane AI</span>
+                </div>
+                
+                <p class="text-gray-700 mb-4">I found the following changes to Azure VMs from last week:</p>
+                
+                <!-- Custom Component: Azure VM Changes Table -->
+                <div class="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
+                  <div class="flex items-center mb-3">
+                    <i class="fa-brands fa-Azure text-orange-500 mr-2"></i>
+                    <h4 class="font-bold text-gray-800">Azure VM Changes (Last 7 Days)</h4>
+                  </div>
+                  <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg">
+                      <thead class="bg-gray-100">
+                        <tr>
+                          <th class="py-2 px-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Instance</th>
+                          <th class="py-2 px-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Change</th>
+                          <th class="py-2 px-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+                          <th class="py-2 px-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-200">
+                        <tr>
+                          <td class="py-2 px-3 text-sm">prod-api-01</td>
+                          <td class="py-2 px-3 text-sm">VM size changed (Standard_D2s_v3 → Standard_D4s_v3)</td>
+                          <td class="py-2 px-3 text-sm">alex.johnson@company.com</td>
+                          <td class="py-2 px-3 text-sm">Apr 28, 2025</td>
+                        </tr>
+                        <tr>
+                          <td class="py-2 px-3 text-sm">dev-web-03</td>
+                          <td class="py-2 px-3 text-sm">Network security group updated</td>
+                          <td class="py-2 px-3 text-sm">sarah.smith@company.com</td>
+                          <td class="py-2 px-3 text-sm">Apr 26, 2025</td>
+                        </tr>
+                        <tr>
+                          <td class="py-2 px-3 text-sm">stage-db-02</td>
+                          <td class="py-2 px-3 text-sm">Started VM</td>
+                          <td class="py-2 px-3 text-sm">mike.dev@company.com</td>
+                          <td class="py-2 px-3 text-sm">Apr 25, 2025</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                
+                <p class="text-gray-700">I've also detected that the change to prod-api-01 was documented in your change management system with ticket #CHG-2845. Would you like me to show more details?</p>
+              </div>
+            </div>
+            
+            <!-- User Follow-up Question -->
+            <div class="flex justify-end">
+              <div class="bg-indigo-100 text-indigo-900 p-3 rounded-lg max-w-md">
+                <p class="font-medium">Show me CPU utilization for prod-api-01 after the change</p>
+              </div>
+            </div>
+            
+            <!-- AI Response with Monitoring Data -->
+            <div class="flex justify-start">
+              <div class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm max-w-2xl">
+                <div class="flex items-center mb-2">
+                  <div class="bg-indigo-600 rounded-full w-8 h-8 flex items-center justify-center mr-2">
+                    <i class="fa-solid fa-robot text-white"></i>
+                  </div>
+                  <span class="font-bold text-indigo-900">Onepane AI</span>
+                </div>
+                
+                <p class="text-gray-700 mb-4">Here's the CPU utilization for prod-api-01 before and after the instance type change on April 28:</p>
+                
+                <!-- Custom Component: Monitoring Chart -->
+                <div class="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
+                  <div class="flex items-center mb-3">
+                    <i class="fa-solid fa-chart-line text-blue-500 mr-2"></i>
+                    <h4 class="font-bold text-gray-800">CPU Utilization: prod-api-01</h4>
+                  </div>
+                  <div class="w-full h-64 bg-white rounded-lg border border-gray-200 p-4">
+                    <div class="flex justify-between items-center mb-1">
+                      <span class="text-xs text-gray-500">Apr 25</span>
+                      <span class="text-xs text-gray-500">Apr 26</span>
+                      <span class="text-xs text-gray-500">Apr 27</span>
+                      <span class="text-xs text-gray-500">Apr 28</span>
+                      <span class="text-xs text-gray-500">Apr 29</span>
+                      <span class="text-xs text-gray-500">Apr 30</span>
+                    </div>
+                    <div class="relative h-48">
+                      <!-- Before change - high utilization -->
+                      <div class="absolute left-0 bottom-0 w-[40%] h-full flex items-end">
+                        <div class="w-full flex items-end space-x-1">
+                          <div class="w-1/6 bg-red-400 rounded-t" style="height: 85%"></div>
+                          <div class="w-1/6 bg-red-400 rounded-t" style="height: 78%"></div>
+                          <div class="w-1/6 bg-red-500 rounded-t" style="height: 90%"></div>
+                          <div class="w-1/6 bg-red-500 rounded-t" style="height: 88%"></div>
+                          <div class="w-1/6 bg-red-400 rounded-t" style="height: 82%"></div>
+                          <div class="w-1/6 bg-red-500 rounded-t" style="height: 92%"></div>
+                        </div>
+                      </div>
+                      
+                      <!-- Change marker -->
+                      <div class="absolute left-[42%] top-0 h-full border-l-2 border-dashed border-indigo-500 flex flex-col items-center">
+                        <div class="bg-indigo-100 text-indigo-800 text-xs p-1 rounded mt-1">
+                          Instance Type Change
+                        </div>
+                      </div>
+                      
+                      <!-- After change - lower utilization -->
+                      <div class="absolute left-[45%] bottom-0 w-[55%] h-full flex items-end">
+                        <div class="w-full flex items-end space-x-1">
+                          <div class="w-1/8 bg-green-400 rounded-t" style="height: 45%"></div>
+                          <div class="w-1/8 bg-green-400 rounded-t" style="height: 38%"></div>
+                          <div class="w-1/8 bg-green-400 rounded-t" style="height: 42%"></div>
+                          <div class="w-1/8 bg-green-400 rounded-t" style="height: 40%"></div>
+                          <div class="w-1/8 bg-green-300 rounded-t" style="height: 32%"></div>
+                          <div class="w-1/8 bg-green-300 rounded-t" style="height: 35%"></div>
+                          <div class="w-1/8 bg-green-300 rounded-t" style="height: 28%"></div>
+                          <div class="w-1/8 bg-green-300 rounded-t" style="height: 30%"></div>
+                        </div>
+                      </div>
+                      
+                      <!-- Y-axis labels -->
+                      <div class="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-gray-500">
+                        <span>100%</span>
+                        <span>75%</span>
+                        <span>50%</span>
+                        <span>25%</span>
+                        <span>0%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <p class="text-gray-700">The CPU utilization dropped from an average of 86% to 37% after the instance type was upgraded from t3.large to t3.xlarge. This resolved the performance alerts that were triggered on April 27.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Chat Input -->
+          <div class="bg-white p-4 border-t border-gray-200">
+            <div class="flex items-center">
+              <input type="text" placeholder="Ask about your IT infrastructure, documentation, or monitoring..." class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <button class="ml-2 bg-indigo-600 text-white p-2 rounded-lg">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex justify-between items-center mt-6">
+          <div class="text-gray-700">
+            <span class="font-medium">Try asking:</span>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm py-1 px-3 rounded-full">
+                "Who owns the payment service?"
+              </button>
+              <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm py-1 px-3 rounded-full">
+                "Show API latency trends"
+              </button>
+              <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm py-1 px-3 rounded-full">
+                "What's our deployment procedure?"
+              </button>
+            </div>
+          </div>
+          <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg flex items-center gap-2">
+            <i class="fa-solid fa-play"></i>
+            <span>Interactive Demo</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-indigo-900 mb-4">Enterprise-Grade AI for IT Teams</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Onepane AI connects to your existing infrastructure to provide instant insights and answers.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div id="feature-1" class="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-link text-indigo-600 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-indigo-900 mb-3">Seamless Integrations</h3>
+          <p class="text-gray-600 mb-4">
+            Connect to your internal documentation, cloud providers (Azure, Azure, GCP), and monitoring systems with pre-built connectors.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fa-solid fa-check text-green-500 mr-2"></i>
+              <span class="text-gray-700">Cloud infrastructure</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-check text-green-500 mr-2"></i>
+              <span class="text-gray-700">Monitoring tools</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-check text-green-500 mr-2"></i>
+              <span class="text-gray-700">Documentation systems</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div id="feature-2" class="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-shield-halved text-indigo-600 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-indigo-900 mb-3">Enterprise Security</h3>
+          <p class="text-gray-600 mb-4">
+            Built with enterprise security in mind. Your data never leaves your environment and access controls are granular.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fa-solid fa-check text-green-500 mr-2"></i>
+              <span class="text-gray-700">SOC2 compliant</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-check text-green-500 mr-2"></i>
+              <span class="text-gray-700">Private deployment options</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-check text-green-500 mr-2"></i>
+              <span class="text-gray-700">Role-based access control</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div id="feature-3" class="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-puzzle-piece text-indigo-600 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-indigo-900 mb-3">Custom Components</h3>
+          <p class="text-gray-600 mb-4">
+            Visualize responses with specialized components for different data types - charts, tables, diagrams, and more.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fa-solid fa-check text-green-500 mr-2"></i>
+              <span class="text-gray-700">Monitoring visualizations</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-check text-green-500 mr-2"></i>
+              <span class="text-gray-700">Infrastructure diagrams</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-check text-green-500 mr-2"></i>
+              <span class="text-gray-700">Audit log tables</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section id="use-cases" class="py-16 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-indigo-900 mb-4">How Teams Use Onepane AI</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          From developers to DevOps to IT managers, Onepane AI helps everyone across your organization.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Use Case 1 -->
+        <div id="use-case-1" class="bg-white rounded-xl overflow-hidden shadow-md">
+          <div class="bg-indigo-600 text-white p-4">
+            <h3 class="text-xl font-bold">For Developers</h3>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start mb-4">
+              <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Developer Avatar" class="w-12 h-12 rounded-full mr-4" />
+              <div class="bg-gray-100 rounded-lg p-3">
+                <p class="text-gray-800">"Where can I find documentation for our payment API?"</p>
+              </div>
+            </div>
+            <div class="flex items-start ml-16">
+              <div class="bg-indigo-50 rounded-lg p-4">
+                <div class="flex items-center mb-2">
+                  <i class="fa-solid fa-robot text-indigo-600 mr-2"></i>
+                  <span class="font-medium text-indigo-900">Onepane AI</span>
+                </div>
+                <p class="text-gray-700 mb-3">The payment API documentation is located in our internal GitBook at:</p>
+                <div class="bg-white border border-gray-200 rounded-lg p-3">
+                  <div class="flex items-center mb-2">
+                    <i class="fa-regular fa-file-lines text-blue-500 mr-2"></i>
+                    <span class="font-medium">Payment API Documentation</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2">Last updated: April 15, 2025 by Sarah Chen</p>
+                  <span class="text-indigo-600 hover:underline text-sm flex items-center cursor-pointer">
+                    <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> View in GitBook
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Use Case 2 -->
+        <div id="use-case-2" class="bg-white rounded-xl overflow-hidden shadow-md">
+          <div class="bg-indigo-600 text-white p-4">
+            <h3 class="text-xl font-bold">For DevOps</h3>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start mb-4">
+              <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg" alt="DevOps Avatar" class="w-12 h-12 rounded-full mr-4" />
+              <div class="bg-gray-100 rounded-lg p-3">
+                <p class="text-gray-800">"Show me Kubernetes pod restarts in production last night"</p>
+              </div>
+            </div>
+            <div class="flex items-start ml-16">
+              <div class="bg-indigo-50 rounded-lg p-4">
+                <div class="flex items-center mb-2">
+                  <i class="fa-solid fa-robot text-indigo-600 mr-2"></i>
+                  <span class="font-medium text-indigo-900">Onepane AI</span>
+                </div>
+                <p class="text-gray-700 mb-3">I found 3 pod restarts in the production cluster last night:</p>
+                <div class="bg-white border border-gray-200 rounded-lg p-3">
+                  <div class="flex items-center mb-2">
+                    <i class="fa-solid fa-dharmachakra text-blue-500 mr-2"></i>
+                    <span class="font-medium">Kubernetes Pod Restarts (Production)</span>
+                  </div>
+                  <table class="min-w-full">
+                    <thead>
+                      <tr class="border-b">
+                        <th class="text-left py-2 text-xs font-medium text-gray-500">Pod Name</th>
+                        <th class="text-left py-2 text-xs font-medium text-gray-500">Namespace</th>
+                        <th class="text-left py-2 text-xs font-medium text-gray-500">Time</th>
+                        <th class="text-left py-2 text-xs font-medium text-gray-500">Reason</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b">
+                        <td class="py-2 text-sm">auth-service-5d78b9f78d-2vpmn</td>
+                        <td class="py-2 text-sm">prod</td>
+                        <td class="py-2 text-sm">2:14 AM</td>
+                        <td class="py-2 text-sm">OOMKilled</td>
+                      </tr>
+                      <tr class="border-b">
+                        <td class="py-2 text-sm">auth-service-5d78b9f78d-8kpql</td>
+                        <td class="py-2 text-sm">prod</td>
+                        <td class="py-2 text-sm">2:16 AM</td>
+                        <td class="py-2 text-sm">OOMKilled</td>
+                      </tr>
+                      <tr>
+                        <td class="py-2 text-sm">cache-7d6f9bd85c-jk2p3</td>
+                        <td class="py-2 text-sm">prod</td>
+                        <td class="py-2 text-sm">3:45 AM</td>
+                        <td class="py-2 text-sm">CrashLoopBackOff</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Use Case 3 -->
+        <div id="use-case-3" class="bg-white rounded-xl overflow-hidden shadow-md">
+          <div class="bg-indigo-600 text-white p-4">
+            <h3 class="text-xl font-bold">For IT Managers</h3>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start mb-4">
+              <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Manager Avatar" class="w-12 h-12 rounded-full mr-4" />
+              <div class="bg-gray-100 rounded-lg p-3">
+                <p class="text-gray-800">"What's our cloud spend by service for Q1 2025?"</p>
+              </div>
+            </div>
+            <div class="flex items-start ml-16">
+              <div class="bg-indigo-50 rounded-lg p-4">
+                <div class="flex items-center mb-2">
+                  <i class="fa-solid fa-robot text-indigo-600 mr-2"></i>
+                  <span class="font-medium text-indigo-900">Onepane AI</span>
+                </div>
+                <p class="text-gray-700 mb-3">Here's the breakdown of cloud spend by service for Q1 2025:</p>
+                <div class="bg-white border border-gray-200 rounded-lg p-3">
+                  <div class="flex items-center mb-3">
+                    <i class="fa-solid fa-chart-pie text-blue-500 mr-2"></i>
+                    <span class="font-medium">Cloud Spend by Service (Q1 2025)</span>
+                  </div>
+                  <div class="h-64 flex">
+                    <!-- Simulated chart -->
+                    <div class="w-1/2 flex flex-col justify-center space-y-2">
+                      <div class="flex items-center">
+                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                        <span class="text-sm">VM: $45,320</span>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                        <span class="text-sm">Blob: $12,845</span>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+                        <span class="text-sm">AKS: $18,720</span>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                        <span class="text-sm">Functions: $5,430</span>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
+                        <span class="text-sm">Other: $8,210</span>
+                      </div>
+                    </div>
+                    <div class="h-64 flex">
+                        <div id="cloudSpendChart" class="w-full"></div>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+        
+        <!-- Use Case 4 -->
+        <div id="use-case-4" class="bg-white rounded-xl overflow-hidden shadow-md">
+          <div class="bg-indigo-600 text-white p-4">
+            <h3 class="text-xl font-bold">For Security Teams</h3>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start mb-4">
+              <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-9.jpg" alt="Security Avatar" class="w-12 h-12 rounded-full mr-4" />
+              <div class="bg-gray-100 rounded-lg p-3">
+                <p class="text-gray-800">"List all public Azure Storage Accounts in our Azure accounts"</p>
+              </div>
+            </div>
+            <div class="flex items-start ml-16">
+              <div class="bg-indigo-50 rounded-lg p-4">
+                <div class="flex items-center mb-2">
+                  <i class="fa-solid fa-robot text-indigo-600 mr-2"></i>
+                  <span class="font-medium text-indigo-900">Onepane AI</span>
+                </div>
+                <p class="text-gray-700 mb-3">I found 2 public Azure Storage Accounts across your Azure accounts:</p>
+                <div class="bg-white border border-gray-200 rounded-lg p-3">
+                  <div class="flex items-center mb-2">
+                    <i class="fa-solid fa-bucket text-orange-500 mr-2"></i>
+                    <span class="font-medium text-orange-700">Security Alert: Public Azure Storage Accounts</span>
+                  </div>
+                  <table class="min-w-full">
+                    <thead>
+                      <tr class="border-b">
+                        <th class="text-left py-2 text-xs font-medium text-gray-500">Bucket Name</th>
+                        <th class="text-left py-2 text-xs font-medium text-gray-500">Azure Account</th>
+                        <th class="text-left py-2 text-xs font-medium text-gray-500">Region</th>
+                        <th class="text-left py-2 text-xs font-medium text-gray-500">Created By</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b bg-red-50">
+                        <td class="py-2 text-sm">company-marketing-assets</td>
+                        <td class="py-2 text-sm">Dev (123456789012)</td>
+                        <td class="py-2 text-sm">us-west-2</td>
+                        <td class="py-2 text-sm">john.doe@company.com</td>
+                      </tr>
+                      <tr class="bg-red-50">
+                        <td class="py-2 text-sm">app-backups-temp</td>
+                        <td class="py-2 text-sm">Prod (098765432109)</td>
+                        <td class="py-2 text-sm">us-east-1</td>
+                        <td class="py-2 text-sm">deploy-automation</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="mt-3 flex justify-end">
+                    <button class="bg-orange-100 text-orange-700 px-3 py-1 rounded-lg text-sm flex items-center">
+                      <i class="fa-solid fa-shield mr-1"></i> Create remediation task
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integrations Section -->
+  <section id="integrations" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-indigo-900 mb-4">Connect to Your Systems</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Onepane AI integrates with your existing tools and infrastructure to provide a unified experience.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Azure -->
+        <div id="integration-Azure" class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-md transition-all">
+          <i class="fa-brands fa-Azure text-4xl text-orange-500 mb-3"></i>
+          <h3 class="font-medium text-gray-800">Azure</h3>
+        </div>
+        
+        <!-- Azure -->
+        <div id="integration-azure" class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-md transition-all">
+          <i class="fa-brands fa-microsoft text-4xl text-blue-500 mb-3"></i>
+          <h3 class="font-medium text-gray-800">Azure</h3>
+        </div>
+        
+        <!-- Google Cloud -->
+        <div id="integration-gcp" class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-md transition-all">
+          <i class="fa-brands fa-google text-4xl text-red-500 mb-3"></i>
+          <h3 class="font-medium text-gray-800">Google Cloud</h3>
+        </div>
+        
+        <!-- Kubernetes -->
+        <div id="integration-k8s" class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-md transition-all">
+          <i class="fa-solid fa-dharmachakra text-4xl text-blue-600 mb-3"></i>
+          <h3 class="font-medium text-gray-800">Kubernetes</h3>
+        </div>
+        
+        <!-- GitLab -->
+        <div id="integration-gitlab" class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-md transition-all">
+          <i class="fa-brands fa-gitlab text-4xl text-orange-600 mb-3"></i>
+          <h3 class="font-medium text-gray-800">GitLab</h3>
+        </div>
+        
+        <!-- GitHub -->
+        <div id="integration-github" class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-md transition-all">
+          <i class="fa-brands fa-github text-4xl text-gray-800 mb-3"></i>
+          <h3 class="font-medium text-gray-800">GitHub</h3>
+        </div>
+        
+        <!-- Prometheus -->
+        <div id="integration-prometheus" class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-md transition-all">
+          <i class="fa-solid fa-chart-line text-4xl text-red-600 mb-3"></i>
+          <h3 class="font-medium text-gray-800">Prometheus</h3>
+        </div>
+        
+        <!-- Slack -->
+        <div id="integration-slack" class="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-md transition-all">
+          <i class="fa-brands fa-slack text-4xl text-purple-600 mb-3"></i>
+          <h3 class="font-medium text-gray-800">Slack</h3>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8">
+        <span class="text-indigo-600 font-medium flex items-center justify-center cursor-pointer">
+          View all integrations
+          <i class="fa-solid fa-arrow-right ml-2"></i>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <!-- <section id="testimonials" class="py-16 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-indigo-900 mb-4">What Our Customers Say</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div id="testimonial-1" class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="flex items-center mb-4">
+            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Customer Avatar" class="w-12 h-12 rounded-full mr-4" />
+            <div>
+              <h4 class="font-bold text-gray-900">Michael Chen</h4>
+              <p class="text-gray-600 text-sm">CTO at TechForward</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">
+            "Onepane AI has transformed how our IT team operates. Our developers spend less time searching for information and more time building features. The ROI has been incredible."
+          </p>
+          <div class="mt-4 flex">
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+          </div>
+        </div>
+        
+        <div id="testimonial-2" class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="flex items-center mb-4">
+            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg" alt="Customer Avatar" class="w-12 h-12 rounded-full mr-4" />
+            <div>
+              <h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+              <p class="text-gray-600 text-sm">DevOps Lead at CloudNative</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">
+            "The custom visualizations in Onepane AI make it easy to understand complex system data at a glance. We've reduced our incident response time by over 40%."
+          </p>
+          <div class="mt-4 flex">
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star-half-stroke text-yellow-400"></i>
+          </div>
+        </div>
+        
+        <div id="testimonial-3" class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="flex items-center mb-4">
+            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Customer Avatar" class="w-12 h-12 rounded-full mr-4" />
+            <div>
+              <h4 class="font-bold text-gray-900">David Rodriguez</h4>
+              <p class="text-gray-600 text-sm">IT Director at Enterprise Solutions</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">
+            "Our teams were struggling with siloed information across different tools. Onepane AI connects everything together and provides a single source of truth that everyone can access."
+          </p>
+          <div class="mt-4 flex">
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Pricing Section -->
+  <!-- <section id="pricing" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-indigo-900 mb-4">Simple, Transparent Pricing</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Plans that scale with your team's needs. All plans include unlimited queries.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div id="pricing-starter" class="border border-gray-200 rounded-xl overflow-hidden">
+          <div class="bg-gray-50 p-6">
+            <h3 class="text-xl font-bold text-indigo-900 mb-2">Starter</h3>
+            <div class="flex items-end">
+              <span class="text-4xl font-bold text-indigo-900">$499</span>
+              <span class="text-gray-600 ml-1">/month</span>
+            </div>
+            <p class="text-gray-600 mt-2">For small teams getting started</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Up to 10 users</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">5 integrations</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Basic visualizations</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Email support</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Data retention: 30 days</span>
+              </li>
+            </ul>
+            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded-lg mt-6">
+              Start Free Trial
+            </button>
+          </div>
+        </div>
+        
+        
+        <div id="pricing-pro" class="border-2 border-indigo-500 rounded-xl overflow-hidden shadow-lg relative">
+          <div class="absolute top-0 right-0 bg-indigo-600 text-white px-3 py-1 text-sm font-medium rounded-bl-lg">
+            Most Popular
+          </div>
+          <div class="bg-indigo-50 p-6">
+            <h3 class="text-xl font-bold text-indigo-900 mb-2">Professional</h3>
+            <div class="flex items-end">
+              <span class="text-4xl font-bold text-indigo-900">$999</span>
+              <span class="text-gray-600 ml-1">/month</span>
+            </div>
+            <p class="text-gray-600 mt-2">For growing teams and organizations</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Up to 50 users</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">15 integrations</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Advanced visualizations</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Priority support</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Data retention: 90 days</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Custom components</span>
+              </li>
+            </ul>
+            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded-lg mt-6">
+              Start Free Trial
+            </button>
+          </div>
+        </div>
+        
+        
+        <div id="pricing-enterprise" class="border border-gray-200 rounded-xl overflow-hidden">
+          <div class="bg-gray-50 p-6">
+            <h3 class="text-xl font-bold text-indigo-900 mb-2">Enterprise</h3>
+            <div class="flex items-end">
+              <span class="text-4xl font-bold text-indigo-900">Custom</span>
+            </div>
+            <p class="text-gray-600 mt-2">For large organizations with specific needs</p>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Unlimited users</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Unlimited integrations</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Custom visualizations</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">24/7 dedicated support</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">Data retention: customizable</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">On-premises deployment option</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                <span class="text-gray-700">SSO & advanced security</span>
+              </li>
+            </ul>
+            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded-lg mt-6">
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- CTA Section -->
+  <section id="cta" class="py-16 px-4 bg-indigo-900 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Ready to Transform Your IT Operations?</h2>
+      <p class="text-xl text-indigo-100 mb-8">
+        Join forward-thinking companies using Onepane AI to streamline their IT operations and empower their teams.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <span class="bg-white text-indigo-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg shadow-lg cursor-pointer">
+          Request Demo
+        </span>
+        <span class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-3 px-8 rounded-lg shadow-lg border border-indigo-600 cursor-pointer">
+          Start Free Trial
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-gray-800 text-gray-300 py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-12 gap-8">
+        <div class="col-span-4">
+          <span class="font-bold text-2xl text-white flex items-center cursor-pointer">
+            One<span class="bg-indigo-600 text-white text-xs px-1 py-0.5 rounded">pane</span>
+            <span class="text-indigo-400 font-bold">AI</span>
+          </span>
+          <p class="mt-4">
+            Enterprise GenAI for IT teams. Connect your systems and get instant insights.
+          </p>
+          <div class="flex space-x-4 mt-6">
+            <span class="text-gray-400 hover:text-white cursor-pointer">
+              <i class="fa-brands fa-twitter text-xl"></i>
+            </span>
+            <span class="text-gray-400 hover:text-white cursor-pointer">
+              <i class="fa-brands fa-linkedin text-xl"></i>
+            </span>
+            <span class="text-gray-400 hover:text-white cursor-pointer">
+              <i class="fa-brands fa-github text-xl"></i>
+            </span>
+          </div>
+        </div>
+        
+        <div class="col-span-2"></div>
+        <div class="col-span-3">
+          <h3 class="text-white font-bold mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><span class="hover:text-white cursor-pointer">About Us</span></li>
+            <li><span class="hover:text-white cursor-pointer">Careers</span></li>
+            <li><span class="hover:text-white cursor-pointer">Contact</span></li>
+            <li><span class="hover:text-white cursor-pointer">Press</span></li>
+          </ul>
+        </div>
+        
+        <div class="col-span-3">
+          <h3 class="text-white font-bold mb-4">Legal</h3>
+          <ul class="space-y-2">
+            <li><a href="/privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+            <li><a href="/cookie-policy.html" class="hover:text-white">Cookie Policy</a></li>
+            <li><a href="/terms-of-use.html" class="hover:text-white">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 pt-8 flex justify-between items-center">
+        <p>© 2025 Onepane AI. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+          <a href="/cookie-policy.html" class="hover:text-white">Cookie Policy</a>
+          <a href="/terms-of-use.html" class="hover:text-white">Terms of Use</a>
+          <span class="hover:text-white cursor-pointer">Security</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+    // Initialize the cloud spend pie chart
+    var options = {
+      series: [45.3, 12.8, 18.7, 5.4, 8.2],
+      chart: {
+        type: 'pie',
+        height: 250,
+        width: '100%'
+      },
+      labels: ['VM', 'Blob', 'AKS', 'Functions', 'Other'],
+      colors: ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6'],
+      legend: {
+        show: false
+      },
+      dataLabels: {
+        enabled: true,
+        formatter: function (val) {
+          return val.toFixed(1) + '%'
+        }
+      },
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return '$' + (val * 1000).toLocaleString()
+          }
+        }
+      }
+    };
+  
+    var chart = new ApexCharts(document.querySelector("#cloudSpendChart"), options);
+    chart.render();
+  </script>
+              </body>
+            </html>
+          
